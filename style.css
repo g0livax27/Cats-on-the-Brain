@@ -1,0 +1,38 @@
+#title {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 300px;
+}
+
+body {
+    background-image: url('./images/background-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    position: relative;
+}
+
+.back {
+    background-image: url('images/memory_game_cardback.jpg');
+    position: absolute;
+}
