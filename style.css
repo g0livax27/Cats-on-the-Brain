@@ -17,7 +17,7 @@ h3 {
 }
 
 body {
-    background-image: url('./images/background-image.jpeg');
+    background-image: url('./images/background_image.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -26,13 +26,4 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.card {
-    position: relative;
-}
-
-.back {
-    background-image: url('images/memory_game_cardback.jpg');
-    position: absolute;
 }
