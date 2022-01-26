@@ -1,29 +1,83 @@
-#title {
+* {
+    box-sizing: border-box;
+}
+
+#game-title {
     text-align: center;
-    color: white;
+    color: purple;
+    text-shadow: 5px 10px 5px white;
 }
 
 h3 {
-    color: white;
+    color: purple;
 }
 
-#cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 300px;
+.player-moves {
+    color: lightskyblue
 }
 
 body {
-    background-image: url('./images/background_image.jpeg');
+    background: radial-gradient(white, peru);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.new-game {
+    font-weight: bolder;
+    background-color: pink;
+    color: white;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 3rem);
+    grid-template-rows: repeat(3, 3rem);
+    grid-gap: 2.5rem;
+    /* perspective of the image flip */
+    perspective: 800px;
+}
+
+.card {
+    /* accommodates the position: absolute on the .face, .back so the two fit onto the image */
+    position: relative;
+    /* image flip */
+    transform-style: preserve-3d;
+    /* timing of the image flip */
+    transition: all 2s ease;
+}
+
+.face, .back {
+    height: 175%;
+    width: 175%;
+    position: absolute;
+    /* makes cards unclickable */
+    pointer-events: none;
+}
+.back {
+    background: lightskyblue;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.player-one-score {
+    color: purple;
+    font-weight: bold;
+    text-decoration: lightgreen wavy underline;
+}
+
+.player-two-score {
+    color: purple;
+    font-weight: bold;
+    text-decoration: lightgreen wavy underline;
+}
+
+/* rotation of the image flip */
+.toggleCard {
+    transform: rotateY(180deg);
 }
