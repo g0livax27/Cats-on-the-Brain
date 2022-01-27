@@ -1,11 +1,13 @@
-* {
-    box-sizing: border-box;
-}
-
 #game-title {
     text-align: center;
     color: purple;
     text-shadow: 5px 10px 5px white;
+}
+
+.game-stats {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
 }
 
 h3 {
@@ -13,7 +15,7 @@ h3 {
 }
 
 .player-moves {
-    color: lightskyblue
+    color: rgb(31, 183, 238)
 }
 
 body {
@@ -30,7 +32,7 @@ body {
 
 .new-game {
     font-weight: bolder;
-    background-color: pink;
+    background-color: rgb(31, 183, 238);
     color: white;
 }
 
@@ -41,6 +43,7 @@ section {
     grid-gap: 2.5rem;
     /* perspective of the image flip */
     perspective: 800px;
+    cursor: help;
 }
 
 .card {
@@ -52,32 +55,40 @@ section {
     transition: all 2s ease;
 }
 
+.face {
+    transform: rotateY(-180deg);
+}
+
 .face, .back {
     height: 175%;
     width: 175%;
     position: absolute;
-    /* makes cards unclickable */
-    pointer-events: none;
 }
+
 .back {
     background: lightskyblue;
     position: absolute;
+    /* shows the back of the card, so the front is hidden */
     backface-visibility: hidden;
 }
 
-.player-one-score {
+.player-score {
     color: purple;
     font-weight: bold;
     text-decoration: lightgreen wavy underline;
 }
 
-.player-two-score {
-    color: purple;
-    font-weight: bold;
-    text-decoration: lightgreen wavy underline;
+#p1 {
+    text-align: left;
 }
 
 /* rotation of the image flip */
 .toggleCard {
     transform: rotateY(180deg);
 }
+
+/*
+Style DOM so that:
+Player's scores are on either side of game board
+New Game button & Moves counter are on the same line above the game board
+*/
