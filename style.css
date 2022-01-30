@@ -34,7 +34,22 @@ body {
     font-weight: bolder;
     background-color: rgb(31, 183, 238);
     color: white;
+    height: 30px;
 }
+
+#new-game {
+    font-weight: bolder;
+    background-color: rgb(31, 183, 238);
+    color: white;
+    height: 30px;
+}
+
+/* .grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 300px;
+} */
 
 section {
     display: grid;
@@ -49,14 +64,14 @@ section {
 .card {
     /* accommodates the position: absolute on the .face, .back so the two fit onto the image */
     position: relative;
-    /* image flip */
+    /* image flip; */
     transform-style: preserve-3d;
     /* timing of the image flip */
     transition: all 2s ease;
 }
 
-.face {
-    transform: rotateY(-180deg);
+.face.visibilty .card{
+    transform: rotateY(0deg);
 }
 
 .face, .back {
@@ -72,23 +87,11 @@ section {
     backface-visibility: hidden;
 }
 
-.player-score {
-    color: purple;
-    font-weight: bold;
-    text-decoration: lightgreen wavy underline;
-}
-
-#p1 {
-    text-align: left;
+.back.visibility .card{
+    transform: (-180deg);
 }
 
 /* rotation of the image flip */
 .toggleCard {
     transform: rotateY(180deg);
 }
-
-/*
-Style DOM so that:
-Player's scores are on either side of game board
-New Game button & Moves counter are on the same line above the game board
-*/
