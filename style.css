@@ -4,7 +4,12 @@
     text-shadow: 5px 10px 5px white;
 }
 
-.game-stats {
+.game-rules {
+    text-align: center;
+    color:purple;
+}
+
+.game-buttons {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -30,26 +35,12 @@ body {
     flex-direction: column;
 }
 
-.new-game {
+.new-game, .restart {
     font-weight: bolder;
     background-color: rgb(31, 183, 238);
     color: white;
     height: 30px;
 }
-
-#new-game {
-    font-weight: bolder;
-    background-color: rgb(31, 183, 238);
-    color: white;
-    height: 30px;
-}
-
-/* .grid {
-    display: flex;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 300px;
-} */
 
 section {
     display: grid;
@@ -70,8 +61,8 @@ section {
     transition: all 2s ease;
 }
 
-.face.visibilty .card{
-    transform: rotateY(0deg);
+.face {
+    transform: rotateY(180deg);
 }
 
 .face, .back {
@@ -87,9 +78,9 @@ section {
     backface-visibility: hidden;
 }
 
-.back.visibility .card{
+/* .back.visibility .card{
     transform: (-180deg);
-}
+} */
 
 /* rotation of the image flip */
 .toggleCard {
