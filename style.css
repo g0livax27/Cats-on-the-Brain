@@ -1,13 +1,13 @@
 #game-title {
     text-align: center;
-    color: purple;
+    color: palevioletred;
     text-shadow: 5px 10px 5px white;
-    text-decoration: greenyellow wavy underline;
+    text-decoration: lightseagreen wavy underline;
 }
 
 .game-rules {
     text-align: center;
-    color:purple;
+    color:palevioletred;
 }
 
 .game-buttons {
@@ -17,12 +17,12 @@
 }
 
 h3 {
-    color: purple;
-    text-decoration: greenyellow wavy underline;
+    color: palevioletred;
+    text-decoration: lightseagreen wavy underline;
 }
 
 .player-moves {
-    color: rgb(31, 183, 238)
+    color: rgb(9, 127, 156)
 }
 
 body {
@@ -37,9 +37,9 @@ body {
     flex-direction: column;
 }
 
-.new-game, .restart {
+.restart {
     font-weight: bolder;
-    background-color: rgb(31, 183, 238);
+    background-color: rgb(9, 127, 156);
     color: white;
     height: 30px;
 }
@@ -74,7 +74,7 @@ section {
 }
 
 .back {
-    background: lightskyblue;
+    background: lightseagreen;
     position: absolute;
     /* shows the back of the card, so the front is hidden */
     backface-visibility: hidden;

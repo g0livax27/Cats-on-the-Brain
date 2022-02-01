@@ -1,13 +1,3 @@
-/*
-Issues:
-* Cards don't flip back if no match
-* "flipped" Class isn't removed so that the flippedCards node is emptied to be able to accept two more items
-* "toggleCard" Class is only removed when card is clicked again (which flips the card back to it's back and uses a move)
-* line 71: "flipped" Class is not added to cards that are clicked from the Event Listener. Instead line 113 in the Event Listener adds the "flipped" Class, and removes "flipped" Class when card is clicked again
-* When Restart function is ran, it does not remove "toggleCard" Class in order to flip cards back nor does it run the randomize(); function to shuffle the cards again
-* Window alerts pop up before the card is flipped
-*/
-
 // Add items to the DOM
 const section = document.querySelector('section');
 const movesCount = document.querySelector('span');
@@ -66,20 +56,35 @@ const cardGenerator = () => {
 
     // Check Cards Function
     const findCat = (e) => {
-        clickedCards = e.target;
-        if(moves === 0) {
-            window.alert('out of moves')
-            restart();
+        // Declare a variable clickedCards for cards that the Event Listener is called on
+        clickedCards = e.target.name;
+        // If the winning card is clicked on the last move
+        if(moves === 0 && item.name === 'cat') {
+            setTimeout(() => {
+                window.alert('found him just in time! play again!');
+            }, 1000);
+            setTimeout(() => {
+                location.reload();}, 2000);
         }
-        if(item.name === 'cat') {
-            window.alert('found him!');
-        } else {
-            window.alert('try again');
-            restart();
-        } 
-      }
-findCat(e);
-
+        // If the winning card is clicked
+        else if(item.name === 'cat') {
+            setTimeout(() => {
+                window.alert('winner! you found him!');
+            }, 1000);
+            setTimeout(() => {
+                location.reload();}, 2000);
+        }
+        // If no moves remain
+        else if(moves === 0) {
+            setTimeout(() => {
+                window.alert('out of moves, try again')
+            }, 1000);
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+        }
+      };
+    
 /* */    
 
     // Event Listener for when a card is clicked
@@ -90,33 +95,15 @@ findCat(e);
         // Decrement moves
         moves--;
         movesCount.innerHTML = moves;
-    });
-});
-
-/* */
-
-    // Restart Game Function
-    const restart = () => {
-        location.reload();
-        // Reset moves to 7
-        moves = 7;
-        movesCount.innerHTML = moves;
-    };  
-
-/* */
-
-    // Event Listeners
-    const newGameBtnEl = document.querySelector('.new-game');
-
-    newGameBtnEl.addEventListener('click', () => {
-        location.reload();
+        findCat(e);
     });
 
     const restartBtnEl = document.querySelector('.restart');
 
     restartBtnEl.addEventListener('click', () => {
         location.reload();
-    });  
+    }); 
+  });  
 };
 cardGenerator();
 
