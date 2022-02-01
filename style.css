@@ -2,6 +2,7 @@
     text-align: center;
     color: purple;
     text-shadow: 5px 10px 5px white;
+    text-decoration: greenyellow wavy underline;
 }
 
 .game-rules {
@@ -17,6 +18,7 @@
 
 h3 {
     color: purple;
+    text-decoration: greenyellow wavy underline;
 }
 
 .player-moves {
@@ -78,11 +80,12 @@ section {
     backface-visibility: hidden;
 }
 
-/* .back.visibility .card{
-    transform: (-180deg);
-} */
-
 /* rotation of the image flip */
 .toggleCard {
     transform: rotateY(180deg);
 }
+
+/* .toggleCardBack {
+    transform: rotateY(-180deg);
+    animation-duration: 1s;
+} */
