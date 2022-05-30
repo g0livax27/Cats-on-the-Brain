@@ -8,7 +8,7 @@ A game of chance: in a deck full of the same card, there's only one that is diff
 ## Technologies Used:
 * HTML
 * CSS
-*JavaScript
+* JavaScript
 
 ## Next Steps:
 * Add music
