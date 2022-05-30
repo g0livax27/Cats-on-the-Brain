@@ -1,4 +1,5 @@
 #game-title {
+    margin: 0;
     text-align: center;
     color: palevioletred;
     text-shadow: 5px 10px 5px white;
@@ -6,8 +7,9 @@
 }
 
 .game-rules {
+    margin: 0;
     text-align: center;
-    color:palevioletred;
+    color: palevioletred;
 }
 
 .game-buttons {
@@ -17,6 +19,8 @@
 }
 
 h3 {
+    padding: 25px 0 0 0;
+    margin: 0;
     color: palevioletred;
     text-decoration: lightseagreen wavy underline;
 }
@@ -33,6 +37,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
+    align-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -67,7 +72,8 @@ section {
     transform: rotateY(180deg);
 }
 
-.face, .back {
+.face,
+.back {
     height: 175%;
     width: 175%;
     position: absolute;
