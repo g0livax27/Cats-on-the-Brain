@@ -2,7 +2,7 @@
     margin: 0;
     text-align: center;
     color: palevioletred;
-    text-shadow: 5px 10px 5px white;
+    text-shadow: 5px 10px 5px ghostwhite;
     text-decoration: lightseagreen wavy underline;
 }
 
@@ -30,9 +30,7 @@ h3 {
 }
 
 body {
-    background: radial-gradient(white, peru);
-    background-size: cover;
-    background-repeat: no-repeat;
+    position: relative;
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -40,6 +38,19 @@ body {
     align-content: center;
     align-items: center;
     flex-direction: column;
+    isolation: isolate;
+    background-color: gainsboro;
+}
+
+/* pseudo-element to be able to add opacity to background image */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://wallpaperaccess.com/full/3068010.jpg");
+    opacity: 0.2;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .restart {
